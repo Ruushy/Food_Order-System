@@ -1,0 +1,43 @@
+﻿-- Create the database
+CREATE DATABASE fds;
+GO
+
+-- Use the fds database
+USE fds;
+GO
+
+-- Create the Category table
+CREATE TABLE Category (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(50)
+);
+GO
+
+-- Create the Pro table
+CREATE TABLE Pro (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    CategoryName VARCHAR(50),
+    Name VARCHAR(50),
+    Price DECIMAL(10,2),
+    Image VARBINARY(MAX)
+);
+GO
+
+-- Create the Package table
+CREATE TABLE Package (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    address VARCHAR(100),
+    phone_number VARCHAR(20),
+    Total DECIMAL(10,2)
+);
+GO
+
+-- Create the Users table
+CREATE TABLE Users (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50)
+);
+GO
